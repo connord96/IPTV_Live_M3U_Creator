@@ -1,43 +1,45 @@
 #EXTM3U
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Undefined",TG4
-http://iptvvi.com:80/Kratz/XhcpDpXsndad/95026?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports News
-http://iptv.csserv.co:8000/live/clientr725/631739/481.ts?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports News
-http://tigersbro.com:8080/vedat/vedat1905/125364?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports News FHD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158235?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports News FHD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278582?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports News HD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278583?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports News HQ
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257072?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",SKY Sports Main Event
-http://tigersbro.com:8080/vedat/vedat1905/125365?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257073?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD
-http://iptv.csserv.co:8000/live/clientr725/631739/8850.ts?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158237?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278578?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event HD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158238?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",SKY SPORTS PREMIER LEAGUE HD
-http://xtream-ui03.feel-tv.com:25461/Vwelsbfa/widnv39573sldba/702?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League
-http://iptv.csserv.co:8000/live/clientr725/631739/479.ts?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League
-http://tigersbro.com:8080/vedat/vedat1905/125366?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League FHD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158241?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League FHD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278585?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League HD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158242?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League HD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278586?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League HQ
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/199457?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",SKY SPORTS FOOTBALL HD
+http://xtream-ui03.feel-tv.com:25461/Vwelsbfa/widnv39573sldba/699?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257074?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
+http://tigersbro.com:8080/vedat/vedat1905/125367?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football FHD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158239?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football FHD (HEVC)
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278574?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football HD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158240?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Golf
+http://tigersbro.com:8080/vedat/vedat1905/125368?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Golf FHD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158249?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Golf HD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158250?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Golf HD
+http://iptv.csserv.co:8000/live/clientr725/631739/2758.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Golf HD (HEVC)
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278577?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Golf*
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257082?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sports 1 FHD
+http://iptv.csserv.co:8000/live/clientr725/631739/8331.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sports 2 FHD
+http://iptv.csserv.co:8000/live/clientr725/631739/8333.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 1 FHD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158271?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 1 FHD (HEVC)
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278559?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 1 HD (HEVC)
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278560?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 1 HQ
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257090?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 FHD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158273?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 FHD (HEVC)
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278561?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 HD (HEVC)
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278562?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 HQ
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257091?checkedby:iptvcat.com

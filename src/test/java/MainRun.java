@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainRun {
 
-  int numberOfChannels, channelIterator, resultsIterator, newIteratorvalue;
+  int numberOfChannels, channelIterator, resultsIterator, newIteratorValue;
   String channelName, channelLocation, channelFlagCheck, channelActivityCheck;
   WebDriver driver;
 
@@ -102,11 +102,11 @@ public class MainRun {
 
   public void addToList() throws Exception {
     //Adds the active links to the downloadable file in IPTVCat
-    newIteratorvalue = resultsIterator * 2;
-    if (newIteratorvalue >= 20) {
-      newIteratorvalue = newIteratorvalue + 1;
+    newIteratorValue = resultsIterator * 2;
+    if (newIteratorValue >= 20) {
+      newIteratorValue = newIteratorValue + 1;
     }
-    var addToListButton = driver.findElement(By.xpath("//tr [" + newIteratorvalue + "] //td [@colspan = '7'] //tr //td[1]"));
+    var addToListButton = driver.findElement(By.xpath("//tr [" + newIteratorValue + "] //td [@colspan = '7'] //tr //td[1]"));
     if (!addToListButton.isDisplayed()) {
       throw new Exception("Add to list button failed to load");
     }
