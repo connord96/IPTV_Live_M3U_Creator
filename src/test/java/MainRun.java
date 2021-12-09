@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -21,6 +22,7 @@ public class MainRun {
   int numberOfChannels, channelIterator, resultsIterator, newIteratorValue;
   String channelName, channelLocation, channelFlagCheck, channelActivityCheck;
   WebDriver driver;
+  WebDriver githubDriver;
 
   @Test
   public void createPlaylist() throws Exception {
@@ -62,6 +64,8 @@ public class MainRun {
         System.out.println("No streams were found for: " + channelName);
     }
     downloadTheFile();
+    pushFileToGithub();
+    createAndMergePR();
   }
 
   public void openWebPage() throws Exception {
@@ -134,7 +138,45 @@ public class MainRun {
       if (m3uFile.delete()) {
         System.out.println("The file has been deleted prior to addition of new file");
       } else throw new Exception("Unable to delete file, please check that the file exists prior to deletion");
+      System.out.println("M3u file doesn't exist, no need to delete");
     }
-    System.out.println("M3u file doesn't exist, no need to delete");
+  }
+
+  public void pushFileToGithub() throws Exception {
+    Runtime runtime = Runtime.getRuntime();
+    try {
+      Process p1 = runtime.exec("E:\\IPTV\\CatIPTVM3u\\src\\M3uFilePush.bat");
+      InputStream is = p1.getInputStream();
+      int i;
+      while ((i = is.read()) != -1) {
+        System.out.print((char) i);
+      }
+    } catch (Exception Exception) {
+      System.out.println("Running the batch file has failed");
+    }
+  }
+
+  public void createAndMergePR() throws InterruptedException {
+    driver.get(Utils.GITHUB_URL);
+    driver.manage().window().maximize();
+    GithubPage githubPage = new GithubPage(driver);
+    Thread.sleep(3000);
+    githubPage.getUsername().sendKeys("connord96");
+    Thread.sleep(500);
+    githubPage.getPassword().sendKeys("Paddymccourt20");
+    Thread.sleep(500);
+    githubPage.getSubmit().click();
+    Thread.sleep(2000);
+    driver.navigate().to(Utils.GITHUB_PR_URL);
+    Thread.sleep(1000);
+    githubPage.getCreatePR().click();
+    Thread.sleep(1000);
+    githubPage.getCreatePRPage2().click();
+    Thread.sleep(1000);
+    githubPage.getMergePR().click();
+    Thread.sleep(1000);
+    githubPage.getMergeMessage().sendKeys("Updating M3u" + System.currentTimeMillis());
+    Thread.sleep(3000);
+    githubPage.getMergeComplete().click();
   }
 }
