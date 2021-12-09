@@ -68,7 +68,7 @@ public class MainRun {
     driver.get(Utils.BASE_URL);
     driver.manage().window().maximize();
     new IPTVCatPage(driver).getAcceptCookies().click();
-    File src = new File("C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\channels.xlsx");
+    File src = new File("src/channels.xlsx");
     FileInputStream fis = new FileInputStream(src);
     XSSFWorkbook xsf = new XSSFWorkbook(fis);
     XSSFSheet sheet = xsf.getSheet("ChannelList");
@@ -76,8 +76,8 @@ public class MainRun {
   }
 
   public void setChromeOptions() {
-    System.setProperty("webdriver.chrome.driver", "C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\chromedriver.exe");
-    String downloadFilepath = "E:\\IPTV\\IPTVM3uDownloads";
+    System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
+    String downloadFilepath = "src/M3uDownloads";
     HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
     chromePrefs.put("profile.default_content_settings.popups", 0);
     chromePrefs.put("download.default_directory", downloadFilepath);
@@ -91,7 +91,7 @@ public class MainRun {
 
   public void excelDataReader() throws Exception {
     //Finds the channel name & location to search
-    File src = new File("C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\channels.xlsx");
+    File src = new File("src/channels.xlsx");
     FileInputStream fis = new FileInputStream(src);
     XSSFWorkbook xsf = new XSSFWorkbook(fis);
     XSSFSheet sheet = xsf.getSheet("ChannelList");
