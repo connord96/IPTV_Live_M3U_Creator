@@ -107,9 +107,18 @@ public class MainRun {
 
   public void addToList() throws Exception {
     //Adds the active links to the downloadable file in IPTVCat
-    newIteratorValue = resultsIterator * 2;
+    newIteratorValue = resultsIterator * 2; //45
     if (newIteratorValue >= 20) {
       newIteratorValue = newIteratorValue + 1;
+    }
+    if (newIteratorValue >= 45) {
+      newIteratorValue = newIteratorValue + 2;
+    }
+    if (newIteratorValue >= 70){
+      newIteratorValue = newIteratorValue + 3;
+    }
+    if (newIteratorValue >= 95){
+      newIteratorValue = newIteratorValue + 45;
     }
     var addToListButton = driver.findElement(By.xpath("//tr [" + newIteratorValue + "] //td [@colspan = '7'] //tr //td[1]"));
     if (!addToListButton.isDisplayed()) {
@@ -177,9 +186,9 @@ public class MainRun {
     githubPage.getSubmit().click();
     Thread.sleep(2000);
     driver.navigate().to(Utils.GITHUB_PR_URL);
-    Thread.sleep(1000);
+    Thread.sleep(2000);
     githubPage.getCreatePR().click();
-    Thread.sleep(1000);
+    Thread.sleep(2000);
     githubPage.getCreatePRPage2().click();
     Thread.sleep(3000);
     githubPage.getMergePR().click();
