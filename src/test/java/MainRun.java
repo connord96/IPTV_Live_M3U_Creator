@@ -12,9 +12,11 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class MainRun {
@@ -22,7 +24,6 @@ public class MainRun {
   int numberOfChannels, channelIterator, resultsIterator, newIteratorValue;
   String channelName, channelLocation, channelFlagCheck, channelActivityCheck;
   WebDriver driver;
-  WebDriver githubDriver;
 
   @Test
   public void createPlaylist() throws Exception {
@@ -156,14 +157,22 @@ public class MainRun {
     }
   }
 
-  public void createAndMergePR() throws InterruptedException {
+  public void createAndMergePR() throws InterruptedException, FileNotFoundException {
+    //Need amended to remove sleeps - but good for now
+    //Encrypt password
+    File dataFile = new File("E:\\IPTV\\CatIPTVM3uData\\data.txt");
+    Scanner scanner = new Scanner(dataFile);
+    var temp1 = scanner.next();
+    String githubPassword = temp1.replace("password=", "").trim();
+
+    //Create PR and Merge
     driver.get(Utils.GITHUB_URL);
     driver.manage().window().maximize();
     GithubPage githubPage = new GithubPage(driver);
     Thread.sleep(3000);
     githubPage.getUsername().sendKeys("connord96");
     Thread.sleep(500);
-    githubPage.getPassword().sendKeys("Paddymccourt20");
+    githubPage.getPassword().sendKeys(githubPassword);
     Thread.sleep(500);
     githubPage.getSubmit().click();
     Thread.sleep(2000);
@@ -172,10 +181,8 @@ public class MainRun {
     githubPage.getCreatePR().click();
     Thread.sleep(1000);
     githubPage.getCreatePRPage2().click();
-    Thread.sleep(1000);
+    Thread.sleep(3000);
     githubPage.getMergePR().click();
-    Thread.sleep(1000);
-    githubPage.getMergeMessage().sendKeys("Updating M3u" + System.currentTimeMillis());
     Thread.sleep(3000);
     githubPage.getMergeComplete().click();
   }
