@@ -15,4 +15,12 @@ public class IPTVCatPage extends PageObject {
   public WebElement getSubmitSearchButton() {
     return driver.findElement(By.xpath("//span [@class='input-group-addon do_search']"));
   }
+
+  public WebElement getAcceptCookies() {
+    return driver.findElement(By.xpath("//button [contains(@class, 'acceptcookies')]"));
+  }
+
+  public WebElement getDownloadM3uFile() {
+    return driver.findElement(By.xpath("//div [@class = 'list_title'] //a"));
+  }
 }

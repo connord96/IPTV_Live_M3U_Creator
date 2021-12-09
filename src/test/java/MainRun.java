@@ -2,49 +2,122 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainRun {
 
-  public int numberOfChannels = 19, channelIterator;
-  String channelName, channelLocation;
+  int numberOfChannels, channelIterator, resultsIterator, newIteratorvalue;
+  String channelName, channelLocation, channelFlagCheck, channelActivityCheck;
   WebDriver driver;
 
-  @Test(testName = "Create M3U Playlist")
+  @Test
   public void createPlaylist() throws Exception {
     openWebPage();
-    IPTVCatPage page = new IPTVCatPage(driver);
 
-    for (channelIterator = 0; channelIterator <= numberOfChannels; channelIterator++) {
+    for (channelIterator = 1; channelIterator <= numberOfChannels - 1; channelIterator++) {
       excelDataReader();
-      System.out.println(channelName);
-      System.out.println(channelLocation);
-      page.getSearchInput().sendKeys(channelName);
-      page.getSubmitSearchButton().click();
-      driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
 
-      //Look through the table of results
-      int rowCount = driver.findElements(By.xpath("//tbody [@class='streams_table']")).size();
+      IPTVCatPage page = new IPTVCatPage(driver);
+      //Clears the channel search input box
+      if (channelIterator != 1) {
+        page.getSearchInput().clear();
+      }
+      System.out.println(channelName);
+      driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+      page.getSearchInput().sendKeys(channelName);
+      driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+      page.getSubmitSearchButton().click();
+      driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+
+      //Check to make sure the result is empty
+      if (!driver.getPageSource().contains("Nothing found!")) {
+
+        //Look through the table of results
+        WebElement table = driver.findElement(By.xpath("//tbody [@class='streams_table']"));
+        List<WebElement> rows = table.findElements(By.xpath("//tr[contains(@class, 'border-solid belongs_to')]"));
+
+        //Checks the amount of results and trawls for active links
+        for (resultsIterator = 1; resultsIterator <= rows.size(); resultsIterator++) {
+          channelFlagCheck = driver.findElement(By.xpath("//tr[contains(@class, 'border-solid belongs_to')] [" + resultsIterator + "]" + " //td [@class = 'flag'] //a")).getAttribute("href").substring(20).replace("_", " ").replace("-", "").trim();
+          channelActivityCheck = driver.findElement(By.xpath("//tr[contains(@class, 'border-solid belongs_to')] [" + resultsIterator + "]" + " //td /child::div [contains(@class, 'state')]")).getAttribute("class").replace("state ", "");
+          if (channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online")) {
+            addToList();
+          } else {
+            System.out.println("Inactive link found for " + channelName);
+          }
+        }
+      } else
+        System.out.println("No streams were found for: " + channelName);
     }
+    downloadTheFile();
   }
 
-  public void openWebPage(){
-    System.setProperty("webdriver.chrome.driver", "C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\chromedriver1.exe");
-    driver = new ChromeDriver();
+  public void openWebPage() throws Exception {
+    setChromeOptions();
     driver.get(Utils.BASE_URL);
     driver.manage().window().maximize();
-  }
-
-  public void excelDataReader() throws Exception {
+    new IPTVCatPage(driver).getAcceptCookies().click();
     File src = new File("C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\channels.xlsx");
     FileInputStream fis = new FileInputStream(src);
     XSSFWorkbook xsf = new XSSFWorkbook(fis);
-    XSSFSheet sheet = xsf.getSheet("Sheet1");
+    XSSFSheet sheet = xsf.getSheet("ChannelList");
+    numberOfChannels = sheet.getPhysicalNumberOfRows();
+  }
+
+  public void setChromeOptions() {
+    System.setProperty("webdriver.chrome.driver", "C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\chromedriver.exe");
+    String downloadFilepath = "E:\\IPTV\\IPTVM3uDownloads";
+    HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+    chromePrefs.put("profile.default_content_settings.popups", 0);
+    chromePrefs.put("download.default_directory", downloadFilepath);
+    ChromeOptions options = new ChromeOptions();
+    options.setExperimentalOption("prefs", chromePrefs);
+    DesiredCapabilities cap = DesiredCapabilities.chrome();
+    cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+    cap.setCapability(ChromeOptions.CAPABILITY, options);
+    driver = new ChromeDriver(cap);
+  }
+
+  public void excelDataReader() throws Exception {
+    //Finds the channel name & location to search
+    File src = new File("C:\\ITB-AnkrPT\\CatIPTVM3u\\src\\channels.xlsx");
+    FileInputStream fis = new FileInputStream(src);
+    XSSFWorkbook xsf = new XSSFWorkbook(fis);
+    XSSFSheet sheet = xsf.getSheet("ChannelList");
     channelName = sheet.getRow(channelIterator).getCell(0).getStringCellValue();
     channelLocation = sheet.getRow(channelIterator).getCell(1).getStringCellValue();
+  }
+
+  public void addToList() throws Exception {
+    //Adds the active links to the downloadable file in IPTVCat
+    newIteratorvalue = resultsIterator * 2;
+    if (newIteratorvalue >= 20) {
+      newIteratorvalue = newIteratorvalue + 1;
+    }
+    var addToListButton = driver.findElement(By.xpath("//tr [" + newIteratorvalue + "] //td [@colspan = '7'] //tr //td[1]"));
+    if (!addToListButton.isDisplayed()) {
+      throw new Exception("Add to list button failed to load");
+    }
+    Actions actions = new Actions(driver);
+    Thread.sleep(350);
+    actions.moveToElement(addToListButton).click().perform();
+    Thread.sleep(350);
+    driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+  }
+
+  public void downloadTheFile() {
+    var href = new IPTVCatPage(driver).getDownloadM3uFile().getAttribute("href");
+    driver.get(href);
   }
 }
