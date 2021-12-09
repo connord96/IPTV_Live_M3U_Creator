@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
@@ -77,7 +78,7 @@ public class MainRun {
 
   public void setChromeOptions() {
     System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
-    String downloadFilepath = "src/M3uDownloads";
+    String downloadFilepath = "E:\\IPTV\\CatIPTVM3u\\src\\M3uDownloads";
     HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
     chromePrefs.put("profile.default_content_settings.popups", 0);
     chromePrefs.put("download.default_directory", downloadFilepath);
@@ -116,8 +117,24 @@ public class MainRun {
     driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
   }
 
-  public void downloadTheFile() {
+  public void downloadTheFile() throws Exception {
+    clearOriginalFilePriorToDownload();
     var href = new IPTVCatPage(driver).getDownloadM3uFile().getAttribute("href");
     driver.get(href);
+    File m3uFile = new File("src/M3uDownloads/my_list.iptvcat.com.m3u8");
+    if (
+        m3uFile.canExecute()) {
+      System.out.println("Should be updated!");
+    } else System.out.println("Should be updated");
+  }
+
+  public void clearOriginalFilePriorToDownload() throws Exception {
+    File m3uFile = new File("src/M3uDownloads/my_list.iptvcat.com.m3u8");
+    if (m3uFile.exists()) {
+      if (m3uFile.delete()) {
+        System.out.println("The file has been deleted prior to addition of new file");
+      } else throw new Exception("Unable to delete file, please check that the file exists prior to deletion");
+    }
+    System.out.println("M3u file doesn't exist, no need to delete");
   }
 }
