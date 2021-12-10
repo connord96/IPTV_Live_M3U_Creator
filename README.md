@@ -1,5 +1,5 @@
 # IPTV_Live_M3U_Creator
-Automated class that trawls through IPTVCat for active streams and produces an M3u.
+Automated class that trawls through IPTVCat for active streams and produces an M3u. Each time the script is run the file will be overwritten and updated with the latest links/streams.
 
 Instructions:
 1) Download and install the repository - Update the location of the data file, chrome driver and download locations etc.
