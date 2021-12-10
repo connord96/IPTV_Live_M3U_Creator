@@ -38,9 +38,9 @@ http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158242?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League HD (HEVC)
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278586?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257074?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
 http://tigersbro.com:8080/vedat/vedat1905/125367?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257074?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football FHD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158239?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football FHD (HEVC)
@@ -211,8 +211,6 @@ http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/10128.ts?checkedby:iptvcat.c
 http://103.194.169.171:8282/DE:Sky_Sport_2_HD_hi/mono.m3u8?token=93a611c10082e5eec57f8bec55d8dc4c&checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD (Sat)
 http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/622.ts?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD+
-http://tigersbro.com:8080/vedat/vedat1905/2168?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD+
 http://iptvvi.com:80/Kratz/XhcpDpXsndad/5912?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 3 HD
