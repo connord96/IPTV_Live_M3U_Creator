@@ -16,14 +16,18 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class MainRun {
 
-  int numberOfChannels, channelIterator, resultsIterator, newIteratorValue;
-  String channelName, channelLocation, channelFlagCheck, channelActivityCheck;
+  int numberOfChannels, channelIterator, resultsIterator, newIteratorValue, rows, channelLiveDaysCheckAsInt, channelLivelinessCheckAsInt;
+  String channelName, channelLocation, channelFlagCheck, channelActivityCheck, channelLivelinessCheck, channelLiveDaysCheck;
   WebDriver driver;
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_GREEN = "\u001B[32m";
+  public static final String ANSI_RED = "\u001B[31m";
 
   @Test
   public void createPlaylist() throws Exception {
@@ -37,32 +41,43 @@ public class MainRun {
       if (channelIterator != 1) {
         page.getSearchInput().clear();
       }
-      System.out.println(channelName);
+      System.out.println(channelName + ":");
       driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
       page.getSearchInput().sendKeys(channelName);
       driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
       page.getSubmitSearchButton().click();
       driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
-      //Check to make sure the result is empty
+      //Check to see if the result is empty
       if (!driver.getPageSource().contains("Nothing found!")) {
 
         //Look through the table of results
         WebElement table = driver.findElement(By.xpath("//tbody [@class='streams_table']"));
-        List<WebElement> rows = table.findElements(By.xpath("//tr[contains(@class, 'border-solid belongs_to')]"));
+        List<WebElement> row = table.findElements(By.xpath("//tr[contains(@class, 'border-solid belongs_to')]"));
+        rows = row.size();
+        if (rows >= 20) {
+          rows = 20;
+        }
 
         //Checks the amount of results and trawls for active links
-        for (resultsIterator = 1; resultsIterator <= rows.size(); resultsIterator++) {
+        for (resultsIterator = 1; resultsIterator <= rows; resultsIterator++) {
           channelFlagCheck = driver.findElement(By.xpath("//tr[contains(@class, 'border-solid belongs_to')] [" + resultsIterator + "]" + " //td [@class = 'flag'] //a")).getAttribute("href").substring(20).replace("_", " ").replace("-", "").trim();
           channelActivityCheck = driver.findElement(By.xpath("//tr[contains(@class, 'border-solid belongs_to')] [" + resultsIterator + "]" + " //td /child::div [contains(@class, 'state')]")).getAttribute("class").replace("state ", "");
-          if (channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online")) {
-            addToList();
-          } else {
-            System.out.println("Inactive link found for " + channelName);
-          }
+          channelLivelinessCheck = driver.findElement(By.xpath("//tr[contains(@class, 'border-solid belongs_to')] [" + resultsIterator + "]" + " //td /child::div [contains(@class, 'live')] //div")).getText();
+          channelLiveDaysCheck = driver.findElement(By.xpath("//tr[contains(@class, 'border-solid belongs_to')] [" + resultsIterator + "]" + " //td /child::div [contains(@class, 'mature')]")).getText();
+          channelLivelinessCheckAsInt = Integer.parseInt(channelLivelinessCheck);
+          channelLiveDaysCheckAsInt = Integer.parseInt(channelLiveDaysCheck);
+
+            if ((rows<=7 && channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online") && channelLivelinessCheckAsInt>=70) || (rows>=8 && channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online") && channelLivelinessCheckAsInt>=85)) {
+              addToList();
+              System.out.println(ANSI_GREEN + "Active link found for " + channelName + ANSI_RESET);
+            }
+            else {
+              System.out.println(ANSI_RED + "Inactive link found for " + channelName + ANSI_RESET);
+            }
         }
-      } else
-        System.out.println("No streams were found for: " + channelName);
+      }else
+        System.out.println(ANSI_RED + "No streams were found for: " + channelName + ANSI_RESET);
     }
     downloadTheFile();
     pushFileToGithub();
@@ -77,7 +92,7 @@ public class MainRun {
     File src = new File("src/channels.xlsx");
     FileInputStream fis = new FileInputStream(src);
     XSSFWorkbook xsf = new XSSFWorkbook(fis);
-    XSSFSheet sheet = xsf.getSheet("ChannelList");
+    XSSFSheet sheet = xsf.getSheet("newList");
     numberOfChannels = sheet.getPhysicalNumberOfRows();
   }
 
@@ -88,6 +103,7 @@ public class MainRun {
     chromePrefs.put("profile.default_content_settings.popups", 0);
     chromePrefs.put("download.default_directory", downloadFilepath);
     ChromeOptions options = new ChromeOptions();
+//    options.addArguments("headless");
     options.setExperimentalOption("prefs", chromePrefs);
     DesiredCapabilities cap = DesiredCapabilities.chrome();
     cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
@@ -100,9 +116,9 @@ public class MainRun {
     File src = new File("src/channels.xlsx");
     FileInputStream fis = new FileInputStream(src);
     XSSFWorkbook xsf = new XSSFWorkbook(fis);
-    XSSFSheet sheet = xsf.getSheet("ChannelList");
+    XSSFSheet sheet = xsf.getSheet("Sheet1");
     channelName = sheet.getRow(channelIterator).getCell(0).getStringCellValue();
-    channelLocation = sheet.getRow(channelIterator).getCell(1).getStringCellValue();
+    channelLocation = sheet.getRow(channelIterator).getCell(1).getStringCellValue().toLowerCase(Locale.ROOT);
   }
 
   public void addToList() throws Exception {
@@ -114,10 +130,10 @@ public class MainRun {
     if (newIteratorValue >= 45) {
       newIteratorValue = newIteratorValue + 2;
     }
-    if (newIteratorValue >= 70){
+    if (newIteratorValue >= 70) {
       newIteratorValue = newIteratorValue + 3;
     }
-    if (newIteratorValue >= 95){
+    if (newIteratorValue >= 95) {
       newIteratorValue = newIteratorValue + 45;
     }
     var addToListButton = driver.findElement(By.xpath("//tr [" + newIteratorValue + "] //td [@colspan = '7'] //tr //td[1]"));
