@@ -10,21 +10,17 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class MainRun {
 
   int numberOfChannels, channelIterator, resultsIterator, newIteratorValue, rows, channelLiveDaysCheckAsInt, channelLivelinessCheckAsInt;
-  String channelName, channelLocation, channelFlagCheck, channelActivityCheck, channelLivelinessCheck, channelLiveDaysCheck;
+  String channelName, channelLocation, channelFlagCheck, channelActivityCheck, channelLivelinessCheck, channelLiveDaysCheck, link, fileUsername, dailyIPTVFilename;
   WebDriver driver;
+  boolean iptvFlag = true;
   public static final String ANSI_RESET = "\u001B[0m";
   public static final String ANSI_GREEN = "\u001B[32m";
   public static final String ANSI_RED = "\u001B[31m";
@@ -68,20 +64,67 @@ public class MainRun {
           channelLivelinessCheckAsInt = Integer.parseInt(channelLivelinessCheck);
           channelLiveDaysCheckAsInt = Integer.parseInt(channelLiveDaysCheck);
 
-            if ((rows<=7 && channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online") && channelLivelinessCheckAsInt>=70) || (rows>=8 && channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online") && channelLivelinessCheckAsInt>=85)) {
-              addToList();
-              System.out.println(ANSI_GREEN + "Active link found for " + channelName + ANSI_RESET);
-            }
-            else {
-              System.out.println(ANSI_RED + "Inactive link found for " + channelName + ANSI_RESET);
-            }
+          if ((rows <= 7 && channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online") && channelLivelinessCheckAsInt >= 70) || (rows >= 8 && channelFlagCheck.contains(channelLocation) && channelActivityCheck.equals("online") && channelLivelinessCheckAsInt >= 85)) {
+            addToList();
+            System.out.println(ANSI_GREEN + "Active link found for " + channelName + ANSI_RESET);
+          } else {
+            System.out.println(ANSI_RED + "Inactive link found for " + channelName + ANSI_RESET);
+          }
         }
-      }else
+      } else
         System.out.println(ANSI_RED + "No streams were found for: " + channelName + ANSI_RESET);
     }
-    downloadTheFile();
-    pushFileToGithub();
-    createAndMergePR();
+//    downloadTheFile();
+//    pushFileToGithub();
+//    createAndMergePR();
+    addBackupService();
+  }
+
+  public void addBackupService() throws Exception {
+    String iptv1 = "mytv.fun", iptv2 = "my34.xyz", iptv32 = "xtream-ui03";
+    Date today = new Date();
+    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+    String date = DATE_FORMAT.format(today);
+    System.out.println(date);
+    System.out.println("https://m.tousecurity.com/free-iptv-links-m3u-playlist-" + date + "/");
+    driver.get("https://m.tousecurity.com/free-iptv-links-m3u-playlist-" + date + "/");
+    driver.manage().window().maximize();
+    Thread.sleep(500);
+    if (driver.getPageSource().contains("Autoriser")) {
+      driver.findElement(By.xpath("(//p [@class = 'fc-button-label']) [1]")).click();
+      Thread.sleep(500);
+    }
+    if (driver.getPageSource().contains(iptv1)) {
+      link = driver.findElement(By.xpath("//p [contains(text(), 'mytv.fun')]")).getText();
+      driver.get(link);
+    }
+    getFileName();
+  }
+
+  public void getFileName() throws Exception {
+    fileUsername = link.substring(link.indexOf("=") + 1, link.indexOf("&password"));
+    dailyIPTVFilename = "tv_channels_" + fileUsername + ".m3u";
+    if (link.contains("_plus")) {
+      dailyIPTVFilename = dailyIPTVFilename + "_plus";
+    }
+    System.out.println(dailyIPTVFilename);
+
+    //changeTheFileName
+    File IPTVPlaylistFile = new File("E:\\IPTV\\CatIPTVM3u\\src\\M3uDownloads\\" + dailyIPTVFilename);
+    File rename = new File("E:\\IPTV\\CatIPTVM3u\\src\\M3uDownloads\\backupTV.m3u");
+    boolean flag = IPTVPlaylistFile.renameTo(rename);
+    if (flag) {
+      System.out.println(ANSI_GREEN + "The file has been renamed to: " + "backupTV.m3u" + ANSI_RESET);
+    } else System.out.println(ANSI_RED + "The files has failed to be renamed" + ANSI_RESET);
+    File m3uFile = new File(dailyIPTVFilename);
+    if (m3uFile.exists()) {
+      if (m3uFile.delete()) {
+        System.out.println(ANSI_GREEN + "The file has been deleted prior to addition of new file" + ANSI_RESET);
+      } else
+        throw new Exception("Unable to delete file " + dailyIPTVFilename + ", please check that the file exists prior to deletion");
+      System.out.println(ANSI_RED + "M3u file doesn't exist, no need to delete" + ANSI_RESET);
+    }
+    iptvFlag = false;
   }
 
   public void openWebPage() throws Exception {
@@ -114,11 +157,43 @@ public class MainRun {
   public void excelDataReader() throws Exception {
     //Finds the channel name & location to search
     File src = new File("src/channels.xlsx");
+    removeBlankRowsFromExcel();
     FileInputStream fis = new FileInputStream(src);
     XSSFWorkbook xsf = new XSSFWorkbook(fis);
-    XSSFSheet sheet = xsf.getSheet("Sheet1");
+    XSSFSheet sheet = xsf.getSheet("newList");
     channelName = sheet.getRow(channelIterator).getCell(0).getStringCellValue();
     channelLocation = sheet.getRow(channelIterator).getCell(1).getStringCellValue().toLowerCase(Locale.ROOT);
+  }
+
+  public void removeBlankRowsFromExcel() throws IOException {
+    File src = new File("src/channels.xlsx");
+    FileInputStream fis = new FileInputStream(src);
+    XSSFWorkbook xsf = new XSSFWorkbook(fis);
+    XSSFSheet sheet = xsf.getSheet("newList");
+
+    Boolean isRowEmpty = true;
+
+    for (int i = 0; i < sheet.getLastRowNum(); i++) {
+      if (sheet.getRow(i) == null) {
+        isRowEmpty = true;
+        sheet.shiftRows(i + 1, sheet.getLastRowNum(), -1);
+        i--;
+        continue;
+      }
+      for (int j = 0; j < sheet.getRow(i).getLastCellNum(); j++) {
+        if (sheet.getRow(i).getCell(j).toString().trim().equals("")) {
+          isRowEmpty = true;
+        } else {
+          isRowEmpty = false;
+          break;
+        }
+      }
+      if (isRowEmpty == true) {
+        sheet.shiftRows(i + 1, sheet.getLastRowNum(), -1);
+        i--;
+      }
+    }
+
   }
 
   public void addToList() throws Exception {
@@ -168,16 +243,21 @@ public class MainRun {
     }
   }
 
-  public void pushFileToGithub() throws Exception {
+  public void pushFileToGithub() {
     Runtime runtime = Runtime.getRuntime();
+    Process p1;
     try {
-      Process p1 = runtime.exec("E:\\IPTV\\CatIPTVM3u\\src\\M3uFilePush.bat");
+      {
+        if (iptvFlag) {
+          p1 = runtime.exec("E:\\IPTV\\CatIPTVM3u\\src\\M3uFilePush.bat");
+        } else p1 = runtime.exec("E:\\IPTV\\CatIPTVM3u\\src\\M3uDownloads\\backupTV.m3u");
+      }
       InputStream is = p1.getInputStream();
       int i;
       while ((i = is.read()) != -1) {
         System.out.print((char) i);
       }
-    } catch (Exception Exception) {
+    } catch (Exception e) {
       System.out.println("Running the batch file has failed");
     }
   }
