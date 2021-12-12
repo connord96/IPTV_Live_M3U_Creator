@@ -40,6 +40,8 @@ http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257073?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539477?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD
+http://iptv.csserv.co:8000/live/clientr725/631739/8850.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158237?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Main Event FHD (HEVC)
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278578?checkedby:iptvcat.com
@@ -55,14 +57,12 @@ http://newlook-fast.com:80/pro2_62c20f/171399/156419?checkedby:iptvcat.com
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1651?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",SKY SPORTS PREMIER LEAGUE HD
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1665?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",SKY SPORTS PREMIER LEAGUE HD
-http://xtream-ui03.feel-tv.com:25461/Vwelsbfa/widnv39573sldba/702?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League
 http://list4k.online:8080/Jorge10z/nogv6Dn08L/3080.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League
-http://tigersbro.com:8080/vedat/vedat1905/125366?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League
 http://iptv.csserv.co:8000/live/clientr725/631739/479.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League
+http://tigersbro.com:8080/vedat/vedat1905/125366?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League  FHD
 http://iptv.csserv.co:8000/live/clientr725/631739/8851.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Premier League FHD
@@ -87,6 +87,8 @@ http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1667?checkedby:iptvcat.com
 http://list4k.online:8080/Jorge10z/nogv6Dn08L/3087.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257074?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football
+http://tigersbro.com:8080/vedat/vedat1905/125367?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football FHD
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539471?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Sky Sports Football FHD
@@ -151,8 +153,6 @@ http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539470?checkedby:iptvcat.
 http://xtream-ui03.feel-tv.com:25461/Vwelsbfa/widnv39573sldba/719?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 1
 http://tigersbro.com:8080/vedat/vedat1905/125379?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 1
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257083?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 1 EXTRA FHD (HEVC)
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/276964?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 1 EXTRA HD (HEVC)
@@ -175,8 +175,6 @@ http://newlook-fast.com:80/pro2_62c20f/171399/156414?checkedby:iptvcat.com
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158259?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 1 SD
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539447?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 2
-http://tigersbro.com:8080/vedat/vedat1905/125380?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 2
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257084?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 2 FHD
@@ -201,8 +199,6 @@ http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257085?checkedby:iptvcat.com
 http://tigersbro.com:8080/vedat/vedat1905/125381?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 FHD
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539451?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 FHD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158264?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 FHD (HEVC)
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/276960?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 HD
@@ -212,11 +208,11 @@ http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539452?checkedby:iptvcat.
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 HD
 http://newlook-fast.com:80/pro2_62c20f/171399/156412?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 HD
-http://iptvvi.com:80/Bektash/qNvXcDD98fPC/95055?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 HD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158265?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 HD
 http://iptvvi.com:80/Kratz/XhcpDpXsndad/95055?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 HD
+http://iptvvi.com:80/Bektash/qNvXcDD98fPC/95055?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport 3 SD
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539453?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport ESPN
@@ -225,8 +221,6 @@ http://tigersbro.com:8080/vedat/vedat1905/125382?checkedby:iptvcat.com
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539454?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport ESPN FHD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158267?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport ESPN FHD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/276962?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport ESPN FHD 50FPS
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/268375?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",BT Sport ESPN HD
@@ -251,8 +245,6 @@ http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158271?checkedby:iptvcat.com
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278559?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 1 HD (HEVC)
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278560?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 1 HQ
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257090?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",PREMIER SPORTS 2
 http://newlook-fast.com:80/pro2_62c20f/171399/156415?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",PREMIER SPORTS 2 FHD
@@ -261,10 +253,10 @@ http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1634?checkedby:iptvcat.com
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1625?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 FHD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158273?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 FHD (HEVC)
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278561?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 HD (HEVC)
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278562?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 HQ
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/257091?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",Premier Sports 2 UK
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539635?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Undefined",MUTV
@@ -276,7 +268,11 @@ http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/278557?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Undefined",MUTV HD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/158285?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="US" tvg-logo="" group-title="Undefined",NBCSN
+http://newlook-fast.com:80/pro2_62c20f/171399/159500?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="US" tvg-logo="" group-title="Undefined",NBCSN
 http://emtv1.xyz:80/NeHosting/rrty53gwty6422/16162.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="US" tvg-logo="" group-title="Undefined",NBCSN CHICAGO PLUS
+http://newlook-fast.com:80/pro2_62c20f/171399/159502?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",beIN SPORTS 1 EN FHD
 http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/267468?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GB" tvg-logo="" group-title="Sport",beIN SPORTS 2 EN FHD
@@ -289,20 +285,18 @@ http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539402?checkedby:iptvcat.
 http://list4k.online:8080/Jorge10z/nogv6Dn08L/844.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",FOX Sports 1
 http://emtv1.xyz:80/NeHosting/rrty53gwty6422/16222.ts?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",FOX SPORTS 2
-http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539401?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",FOX SPORTS 2 HD
-http://list4k.online:8080/Jorge10z/nogv6Dn08L/845.ts?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",FOX SPORTS 2 HD
-http://iptv.csserv.co:8000/live/clientr725/631739/2859.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",The Golf Channel
 http://emtv1.xyz:80/NeHosting/rrty53gwty6422/16176.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",CBS SPORTS NETWORK
 http://muttsnuts.teaches-yoga.com:8080/butler1/butler1/539403?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="US" tvg-logo="" group-title="Sport",CBS SPORTS NETWORK
 http://newlook-fast.com:80/pro2_62c20f/171399/159812?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",SKY SPORT 1 HD
+http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1173?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 1 HD
 http://list4k.online:8080/Jorge10z/nogv6Dn08L/81622.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 1 HD
+http://newlook-fast.com:80/pro2_62c20f/171399/156523?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 1 HD
 http://iptvvi.com:80/Bektash/qNvXcDD98fPC/125?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 1 HD
@@ -323,16 +317,18 @@ http://103.194.169.171:8282/DE:SKY_SPORT_1_HD_hi/mono.m3u8?token=93a611c10082e5e
 http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/117.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 1 HD (Sat)
 http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/621.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",SKY SPORT 2 HD
+http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1171?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD
 http://list4k.online:8080/Jorge10z/nogv6Dn08L/81626.ts?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD
+http://newlook-fast.com:80/pro2_62c20f/171399/156521?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD
+http://iptvvi.com:80/Kratz/XhcpDpXsndad/126?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD
 http://tigersbro.com:8080/vedat/vedat1905/2167?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD,Sky Sport 2 HD (LO)
 http://103.194.169.171:8282/DE:Sky_Sport_2_HD_lo/mono.m3u8?token=93a611c10082e5eec57f8bec55d8dc4c&checkedby:iptvcat.com
-#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD
-http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/67142?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD
-http://iptvvi.com:80/Kratz/XhcpDpXsndad/126?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD #2
 http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/118.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD (HEVC)
@@ -342,11 +338,11 @@ http://103.194.169.171:8282/DE:Sky_Sport_2_HD_hi/mono.m3u8?token=93a611c10082e5e
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD (Sat)
 http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/622.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD+
-http://tigersbro.com:8080/vedat/vedat1905/2168?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD+
 http://iptvvi.com:80/Bektash/qNvXcDD98fPC/5912?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD+
 http://iptvvi.com:80/Kratz/XhcpDpXsndad/5912?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DE" tvg-logo="" group-title="Sport",Sky Sport 2 HD+
+http://tigersbro.com:8080/vedat/vedat1905/2168?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="AU" tvg-logo="" group-title="Sport",beIN Sports 1 HD
 http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/1730.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="AU" tvg-logo="" group-title="Sport",beIN Sports 2 HD
@@ -356,7 +352,9 @@ http://iptv.watchhd.cc:5050/kelevra321/UWqjWR89sRNT/1732.ts?checkedby:iptvcat.co
 #EXTINF:0 tvg-country="GR" tvg-logo="" group-title="Sport",COSMOTE SPORT 1 HD
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1890?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="GR" tvg-logo="" group-title="Sport",Cosmote Sport 1
-http://iptvvi.com:80/Kratz/XhcpDpXsndad/95825?checkedby:iptvcat.com
+http://iptvvi.com:80/Bektash/qNvXcDD98fPC/95825?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="GR" tvg-logo="" group-title="Sport",Cosmote Sport 1 HD
+http://king-tv.online:8080/tarek.soh/Dw7jM8cyFC/196595?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",ZIGGO SPORT SELECT
 http://list4k.online:8080/Jorge10z/nogv6Dn08L/38173.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",ZIGGO SPORT SELECT FHD
@@ -365,8 +363,6 @@ http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/2495?checkedby:iptvcat.com
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1281?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",ZIGGO SPORT SELECT HD
 http://tigersbro.com:8080/vedat/vedat1905/19362?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",Ziggo Sport Select HD
-http://iptv.csserv.co:8000/live/clientr725/631739/2915.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",Ziggo Sport Select HD RAW
 http://tigersbro.com:8080/vedat/vedat1905/115194?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",ZIGGO SPORT VOETBAL
@@ -375,15 +371,15 @@ http://tigersbro.com:8080/vedat/vedat1905/37227?checkedby:iptvcat.com
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/2494?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",ZIGGO SPORT VOETBAL HD
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1280?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="NL" tvg-logo="" group-title="Sport",Ziggo Sport Voetbal
-http://iptv.csserv.co:8000/live/clientr725/631739/2737.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="SE" tvg-logo="" group-title="Sport",VIASAT SPORT PREMIUM FHD
 http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/3263?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="SE" tvg-logo="" group-title="Sport",Viasat Sport Premium
 http://iptv.csserv.co:8000/live/clientr725/631739/3425.ts?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="SE" tvg-logo="" group-title="Sport",Viasat Sport Premium HD
 http://iptvvi.com:80/Bektash/qNvXcDD98fPC/78273?checkedby:iptvcat.com
-#EXTINF:0 tvg-country="" tvg-logo="" group-title="Sport",Sport Klub 1 HD (HR)
-http://tigersbro.com:8080/vedat/vedat1905/2510?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="" tvg-logo="" group-title="Sport",SPORT KLUB 1 HD (HR)
+http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1108?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="" tvg-logo="" group-title="Sport",SPORT KLUB 1 HD (RS)
+http://line.pito-tv.com:80/MguaBxyVfO/QWHrjHjAtT/1091?checkedby:iptvcat.com
 #EXTINF:0 tvg-country="" tvg-logo="" group-title="Sport",Sport Klub 1 HD (SR)
 http://tigersbro.com:8080/vedat/vedat1905/2503?checkedby:iptvcat.com
